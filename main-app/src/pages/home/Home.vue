@@ -1,7 +1,5 @@
 <template>
-    <div class="home">
-        <h1>这是vue子应用的首页</h1>
-    </div>
+    <div>这是主应用的首页</div>
 </template>
 
 <script>

@@ -3,10 +3,10 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
     state: {
         user: {
-            name: ''
+            name: 'zhangsan'
         }
     },
     mutations: {
@@ -17,3 +17,5 @@ export default new Vuex.Store({
     actions: {},
     modules: {}
 })
+
+export default store

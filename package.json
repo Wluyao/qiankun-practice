@@ -1,7 +1,7 @@
 {
-  "name": "qiankun-example",
+  "name": "qiankun-practice",
   "version": "0.0.1",
-  "description": "qiankun demo",
+  "description": "qiankun",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -29,10 +29,7 @@
     "url": "git@fengxianqi.github.com:fengxianqi/qiankun-example.git"
   },
   "keywords": [
-    "qiankun",
-    "qiankun-example",
-    "demo"
+    "qiankun"
   ],
-  "author": "fengxianqi",
   "license": "MIT"
 }
