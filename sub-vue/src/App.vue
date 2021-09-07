@@ -1,17 +1,20 @@
 <template>
     <div id="app">
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link>
+        <div class="nav">
+            <router-link to="/">首页</router-link> |
+            <router-link to="/about">关于我们</router-link>
         </div>
+
         <div>
-            <p>当前处于 {{ isInQiankun ? 'qiankun' : '独立运行' }} 环境</p>
+            <p>当前处于{{ isInQiankun ? 'qiankun' : '独立运行' }}环境</p>
         </div>
+        
         <div class="btns">
             <template v-if="isInQiankun">
-                <button @click="toSubReact">从当前子应用内跳转到sub-react子应用</button>
+                <button @click="toSubReact">从当前子应用进入sub-react子应用</button>
                 <button @click="openSubVue">独立打开sub-vue子应用</button>
             </template>
+
             <button @click="changeUsername">改变全局的用户名称</button>
         </div>
         <router-view />
@@ -53,22 +56,23 @@ export default {
     color: #2c3e50;
 }
 
-#nav {
+.nav {
     padding: 30px;
 }
 
-#nav a {
+.nav a {
     font-weight: bold;
     color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
+.nav a.router-link-exact-active {
     color: #42b983;
 }
 
 .btns {
     margin: 100px;
 }
+
 .btns button {
     margin: 0 10px;
 }

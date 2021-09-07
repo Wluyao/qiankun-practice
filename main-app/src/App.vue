@@ -1,26 +1,28 @@
 <template>
-    <div class="layout">
-        <div class="layout-header">
-            <div class="layout-header-logo">qiankun实践</div>
-            <div class="userinfo">主应用的state：{{ user.name }}</div>
-        </div>
-
-        <div class="layout-body">
-            <div class="layout-menu">
-                <div class="layout-menu-item">
-                    <router-link to="/" exact>首页</router-link>
-                </div>
-                <div class="layout-menu-item">
-                    <router-link to="/sub-vue">Vue子应用</router-link>
-                </div>
-                <div class="layout-menu-item">
-                    <router-link to="/sub-react">React子应用</router-link>
-                </div>
+    <div id="app">
+        <div class="layout">
+            <div class="layout-header">
+                <div class="layout-header-logo">qiankun实践</div>
+                <div class="userinfo">主应用的状态：{{ count }}</div>
             </div>
 
-            <div class="layout-container">
-                <router-view></router-view>
-                <div id="subapp-container"></div>
+            <div class="layout-body">
+                <div class="layout-menu">
+                    <div class="layout-menu-item">
+                        <router-link to="/" exact>首页</router-link>
+                    </div>
+                    <div class="layout-menu-item">
+                        <router-link to="/sub-vue">Vue子应用</router-link>
+                    </div>
+                    <div class="layout-menu-item">
+                        <router-link to="/sub-react">React子应用</router-link>
+                    </div>
+                </div>
+
+                <div class="layout-container">
+                    <router-view></router-view>
+                    <div id="subapp-container"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -34,8 +36,8 @@ export default {
         return {}
     },
     computed: {
-        user() {
-            return store.state.user
+        count() {
+            return store.state.count
         }
     }
 }

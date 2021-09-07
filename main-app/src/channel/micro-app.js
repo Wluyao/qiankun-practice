@@ -21,7 +21,7 @@ const subHtmlApp = {
 
 const subApps = [subVueApp, subReactApp, subHtmlApp]
 
-// 为所有子应用配置添加统一的属性
+// 为所有子应用配置添加统一的配置
 const apps = subApps.map((item) => {
     return {
         ...item,
@@ -29,7 +29,7 @@ const apps = subApps.map((item) => {
         container: '#subapp-container',
         // 传递信息给子应用
         props: {
-            // 下发基础路由
+            // 基础路由，子应用的路由前缀(router的base)
             routerBase: item.activeRule
         }
     }
