@@ -1,14 +1,13 @@
 <template>
-    <div id="app">
+    <div class="app">
         <div class="nav">
             <router-link to="/">首页</router-link> |
             <router-link to="/about">关于我们</router-link>
         </div>
-
         <div>
             <p>当前处于{{ isInQiankun ? 'qiankun' : '独立运行' }}环境</p>
         </div>
-        
+
         <div class="btns">
             <template v-if="isInQiankun">
                 <button @click="toSubReact">从当前子应用进入sub-react子应用</button>
@@ -17,7 +16,7 @@
 
             <button @click="changeUsername">改变全局的用户名称</button>
         </div>
-        <router-view />
+        <router-view></router-view>
     </div>
 </template>
 
@@ -47,8 +46,8 @@ export default {
 }
 </script>
 
-<style>
-#app {
+<style scoped>
+.app {
     font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

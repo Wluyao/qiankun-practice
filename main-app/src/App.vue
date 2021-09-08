@@ -1,8 +1,8 @@
 <template>
-    <div id="app">
+    <div class="app">
         <div class="layout">
             <div class="layout-header">
-                <div class="layout-header-logo">qiankun实践</div>
+                <div class="layout-header-logo">QianKun</div>
                 <div class="userinfo">主应用的状态：{{ count }}</div>
             </div>
 
@@ -52,7 +52,8 @@ export default {
 }
 
 .layout-header-logo {
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .layout-body {
@@ -64,6 +65,7 @@ export default {
     width: 160px;
     padding: 20px;
     border-right: 1px solid #eee;
+    font-size: 16px;
 }
 
 .layout-menu-item {
