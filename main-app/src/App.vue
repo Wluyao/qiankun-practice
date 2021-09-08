@@ -17,6 +17,9 @@
                     <div class="layout-menu-item">
                         <router-link to="/sub-react">React子应用</router-link>
                     </div>
+                    <div class="layout-menu-item">
+                        <router-link to="/sub-html">HTML子应用</router-link>
+                    </div>
                 </div>
 
                 <div class="layout-container">
@@ -39,7 +42,8 @@ export default {
         count() {
             return store.state.count
         }
-    }
+    },
+    methods: {}
 }
 </script>
 

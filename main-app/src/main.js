@@ -16,4 +16,8 @@ new Vue({
 })
 
 registerMicroApps(microApps)
-start()
+start({
+    sandbox: {
+        experimentalStyleIsolation: true
+    }
+})
