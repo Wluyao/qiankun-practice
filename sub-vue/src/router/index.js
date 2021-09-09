@@ -5,6 +5,6 @@ import aboutRoute from './modules/about'
 
 Vue.use(VueRouter)
 
-const routes = [homeRoutem, aboutRoute]
+const routes = [homeRoute, aboutRoute]
 
 export default routes
