@@ -1,27 +1,90 @@
-## 安装根目录工程依赖
+## 主应用
+
+### main-app
+
+进入main-app目录
+
+#### 安装依赖
+
+```
+yarn
+```
+
+或者
 
 ```
 npm i
 ```
-## 一键安装所有应用的依赖
+
+#### 启动
 
 ```
-npm run install
+yarn serve
 ```
 
-## 一键启动所有所有应用
+或者
 
 ```
-npm start
+npm run serve
 ```
-
-​	每个应用可以独立启动
 
 通过 [http://localhost:8080/](http://localhost:8080/) 访问主应用。
 
-## 一键构建并打包所有应用
+
+
+## 子应用
+
+### sub-vue
+
+进入sub-vue目录
+
+#### 安装依赖
 
 ```
-npm run build
+yarn
 ```
+
+#### 启动
+
+```
+yarn serve
+```
+
+
+
+### sub-react
+
+进入sub-react目录
+
+#### 安装依赖
+
+```
+yarn
+```
+
+#### 启动
+
+```
+yarn start
+```
+
+
+
+### sub-html
+
+进入sub-html目录
+
+#### 安装依赖
+
+```
+yarn
+```
+
+#### 启动
+
+```
+yarn start
+```
+
+
 
