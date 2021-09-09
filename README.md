@@ -1,18 +1,18 @@
 ## 安装根目录工程依赖
 
 ```
-yarn
+npm i
 ```
 ## 一键安装所有应用的依赖
 
 ```
-yarn install
+npm run install
 ```
 
 ## 一键启动所有所有应用
 
 ```
-yarn start
+npm start
 ```
 
 ​	每个应用可以独立启动
@@ -22,6 +22,6 @@ yarn start
 ## 一键构建并打包所有应用
 
 ```
-yarn build
+npm run build
 ```
 
