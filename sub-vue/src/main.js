@@ -35,6 +35,14 @@ export async function bootstrap() {
 
 // 子应用每次进入都会调用 mount方法
 export async function mount(props) {
+    // 获取基座下发的数据
+    const globalState = props.getGlobalState()
+    // //  监听全局数据的变化
+    props.onGlobalStateChange((state, prevState) => {
+        console.log(state, prevState)
+    })
+    // 改变全局的数据
+    props.setGlobalState({ user: { name: 'aaa' } })
     render(props)
 }
 

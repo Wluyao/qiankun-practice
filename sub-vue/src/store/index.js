@@ -3,17 +3,11 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-    state: {
-        user: {
-            name: ''
-        }
-    },
-    mutations: {
-        setUser(state, payload) {
-            state.user = payload.user
-        }
-    },
+const store = new Vuex.Store({
+    state: {},
+    mutations: {},
     actions: {},
     modules: {}
 })
+
+export default store

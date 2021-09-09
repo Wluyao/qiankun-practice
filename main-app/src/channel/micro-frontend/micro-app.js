@@ -1,3 +1,5 @@
+import microAction from './micro-action'
+
 // vue子应用配置
 const subVueApp = {
     name: 'sub-vue',
@@ -30,7 +32,9 @@ const apps = subApps.map((item) => {
         // 传递信息给子应用
         props: {
             // 基础路由，子应用的路由前缀(router的base)
-            routerBase: item.activeRule
+            routerBase: item.activeRule,
+            // 下发getGlobalState方法
+            getGlobalState: microAction.getGlobalState
         }
     }
 })

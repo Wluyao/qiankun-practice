@@ -33,17 +33,27 @@
 
 <script>
 import store from '@/store'
+import microBus from '@/channel/micro-frontend/micro-bus'
 
 export default {
     data() {
         return {}
+    },
+    created() {
+        microBus.on('changeMainCount', (event) => {
+            const [value] = event.detail
+            store.commit('setCount', value)
+        })
     },
     computed: {
         count() {
             return store.state.count
         }
     },
-    methods: {}
+    methods: {},
+    destroyed() {
+        microBus.off('changeMainCount')
+    }
 }
 </script>
 
