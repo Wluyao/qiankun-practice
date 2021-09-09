@@ -3,7 +3,10 @@
         <div class="layout">
             <div class="layout-header">
                 <div class="layout-header-logo">QianKun</div>
-                <div class="userinfo">主应用的状态：{{ count }}</div>
+                <div class="layout-header-state">
+                    <span>主应用的count：{{ count }}；</span>
+                    <span>主应用的user：{{ user.name }}</span>
+                </div>
             </div>
 
             <div class="layout-body">
@@ -48,6 +51,9 @@ export default {
     computed: {
         count() {
             return store.state.count
+        },
+        user() {
+            return store.state.user
         }
     },
     methods: {},
@@ -63,11 +69,15 @@ export default {
     padding: 0 20px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     line-height: 50px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .layout-header-logo {
     font-size: 22px;
     font-weight: 600;
+}
+.layout-header-state {
 }
 
 .layout-body {

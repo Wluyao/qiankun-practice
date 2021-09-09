@@ -1,9 +1,10 @@
 import './public-path'
 import Vue from 'vue'
+import VueRouter from 'vue-router'
 import App from './App.vue'
 import routes from './router'
 import store from './store'
-import VueRouter from 'vue-router'
+import microAction from './channel/micro-frontend/micro-action'
 
 Vue.config.productionTip = false
 let instance = null
@@ -37,17 +38,18 @@ export async function bootstrap() {
 export async function mount(props) {
     // 获取基座下发的数据
     const globalState = props.getGlobalState()
+    console.log('主应用传来的数据：', globalState)
     //  监听全局数据的变化
     props.onGlobalStateChange((state, prevState) => {
         console.log('子应用：', state, prevState)
     })
-    
+
     // 改变全局的数据
-    props.setGlobalState({ user: { name: 'aaa' } })
+    microAction.setGlobalState = props.setGlobalState
     render(props)
 }
 
-//  可选生命周期钩子，仅使用 loadMicroApp 方式加载微应用时生效
+// 可选生命周期钩子，仅使用 loadMicroApp 方式加载微应用时生效
 export async function update(props) {
     console.log('update props', props)
 }

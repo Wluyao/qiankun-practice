@@ -5,13 +5,19 @@
         <div class="btns" v-if="isInQiankun">
             <div class="btn" @click="toSubReact">进入sub-react子应用</div>
             <div class="btn" @click="openSubVue">独立打开sub-vue子应用</div>
-            <div class="btn" @click="changeMainCount">改变主应用的状态</div>
+        </div>
+
+        <div class="btns" v-if="isInQiankun">
+            <div class="btn" @click="changeMainCount">通过customEvent改变主应用的状态</div>
+            <div class="btn" @click="changeMainUser">
+                通过主应用下发的setGlobalState方法改变主应用的状态
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import microBus from '@/channel/micro-frontend/micro-bus'
+import { microBus, microAction } from '@/channel/micro-frontend'
 import { random } from '@/utils/core'
 
 export default {
@@ -28,6 +34,9 @@ export default {
         },
         changeMainCount() {
             microBus.emit('changeMainCount', random())
+        },
+        changeMainUser() {
+            microAction.setGlobalState({ user: { name: '李四' } })
         },
         openSubVue() {
             if (!this.isInQiankun) {
