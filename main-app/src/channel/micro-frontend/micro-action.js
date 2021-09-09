@@ -19,7 +19,6 @@ actions.onGlobalStateChange((state, prevState) => {
             store.commit('setUser', state[key])
         }
     }
-    console.log(initialState)
 })
 
 // 定义一个获取state的方法下发到子应用

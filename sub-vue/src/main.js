@@ -36,16 +36,22 @@ export async function bootstrap() {
 
 // 子应用每次进入都会调用 mount方法
 export async function mount(props) {
-    // 获取基座下发的数据
-    const globalState = props.getGlobalState()
-    console.log('主应用传来的数据：', globalState)
     //  监听全局数据的变化
     props.onGlobalStateChange((state, prevState) => {
-        console.log('子应用：', state, prevState)
+        for (const key in state) {
+            if (key === 'user') {
+                store.commit('setUser', state[key])
+            }
+        }
     })
+
+    // 获取基座下发的数据
+    const globalState = props.getGlobalState()
+    store.commit('setUser', globalState.user)
 
     // 改变全局的数据
     microAction.setGlobalState = props.setGlobalState
+
     render(props)
 }
 

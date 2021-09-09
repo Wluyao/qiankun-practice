@@ -1,6 +1,8 @@
 <template>
     <div class="home">
         <h1>这是vue子应用的首页</h1>
+        <br />
+        <div>主应用下发给子应用的状态：{{ user.name }}</div>
 
         <div class="btns" v-if="isInQiankun">
             <div class="btn" @click="toSubReact">进入sub-react子应用</div>
@@ -18,6 +20,7 @@
 
 <script>
 import { microBus, microAction } from '@/channel/micro-frontend'
+import store from '@/store'
 import { random } from '@/utils/core'
 
 export default {
@@ -26,6 +29,9 @@ export default {
         // 是否通过主应用加载
         isInQiankun() {
             return window.__POWERED_BY_QIANKUN__
+        },
+        user() {
+            return store.state.user
         }
     },
     methods: {
@@ -51,6 +57,9 @@ export default {
 </script>
 
 <style scoped>
+.home {
+    padding: 20px;
+}
 .btns {
     margin: 100px;
     display: flex;

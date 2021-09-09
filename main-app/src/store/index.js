@@ -15,7 +15,6 @@ const store = new Vuex.Store({
             state.count = payload
         },
         setUser(state, payload) {
-            console.log(222)
             state.user = payload
         }
     },
