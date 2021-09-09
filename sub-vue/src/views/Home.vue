@@ -1,13 +1,11 @@
 <template>
     <div class="home">
         <h1>这是vue子应用的首页</h1>
-        <div class="btns">
-            <template v-if="isInQiankun">
-                <button @click="toSubReact">从当前子应用进入sub-react子应用</button>
-                <button @click="openSubVue">独立打开sub-vue子应用</button>
-            </template>
 
-            <button @click="changeMainCount">改变主应用的状态</button>
+        <div class="btns" v-if="isInQiankun">
+            <div class="btn" @click="toSubReact">进入sub-react子应用</div>
+            <div class="btn" @click="openSubVue">独立打开sub-vue子应用</div>
+            <div class="btn" @click="changeMainCount">改变主应用的状态</div>
         </div>
     </div>
 </template>
@@ -46,9 +44,15 @@ export default {
 <style scoped>
 .btns {
     margin: 100px;
+    display: flex;
+    justify-content: center;
 }
 
-.btns button {
+.btns .btn {
+    padding: 10px;
     margin: 0 10px;
+    border-radius: 5px;
+    background-color: #eee;
+    cursor: pointer;
 }
 </style>

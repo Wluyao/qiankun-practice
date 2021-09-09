@@ -2,6 +2,12 @@
 
 本地服务通过 `http-server` 提供。
 
+
+## 安装依赖
+```
+yarn
+```
+
 ## 启动
 ```
 yarn start
