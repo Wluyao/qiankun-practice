@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import App from './App.vue'
 import './assets/styles/app.css'
-import microApps from './channel/micro-frontend/micro-app'
+import { microApps } from './channel/micro-frontend'
 
 Vue.config.productionTip = false
 

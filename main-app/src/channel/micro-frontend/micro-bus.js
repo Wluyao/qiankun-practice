@@ -1,6 +1,4 @@
-/**
- * 原生customEvent实现eventBus，主要用于微前端事件通信
- */
+// 主应用和子应用通过CustomEvent进行通信
 
 class EventEmitter {
     constructor() {

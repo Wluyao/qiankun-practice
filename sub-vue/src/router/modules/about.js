@@ -2,7 +2,7 @@ const About = () => import(/* webpackChunkName:'home' */ '@/pages/about')
 
 const route = {
     name: 'About',
-    path: '/',
+    path: '/about',
     component: About
 }
 

@@ -1,3 +1,5 @@
-const actions = {}
+const actions = {
+    setGlobalState() {}
+}
 
 export default actions

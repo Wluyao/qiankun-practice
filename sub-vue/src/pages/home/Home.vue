@@ -38,19 +38,18 @@ export default {
         toSubReact() {
             history.pushState(null, 'sub-react', '/sub-react')
         },
-        changeMainCount() {
-            microBus.emit('changeMainCount', random())
-        },
-        changeMainUser() {
-            microAction.setGlobalState({ user: { name: '李四' } })
-        },
         openSubVue() {
             if (!this.isInQiankun) {
                 alert('当前已经是单独运行的子应用')
                 return
             }
-            // window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__ 是qiankun注入的子应用对应的地址，谨慎使用，生产环境建议将跳转地址维护在环境变量中
             window.open(window.__INJECTED_PUBLIC_PATH_BY_QIANKUN__)
+        },
+        changeMainCount() {
+            microBus.emit('changeMainCount', random())
+        },
+        changeMainUser() {
+            microAction.setGlobalState({ user: { name: '李四' } })
         }
     }
 }
@@ -61,7 +60,7 @@ export default {
     padding: 20px;
 }
 .btns {
-    margin: 100px;
+    margin: 50px;
     display: flex;
     justify-content: center;
 }

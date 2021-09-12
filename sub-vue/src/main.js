@@ -7,11 +7,13 @@ import store from './store'
 import microAction from './channel/micro-frontend/micro-action'
 
 Vue.config.productionTip = false
+
+let router = null
 let instance = null
 
 function render(props = {}) {
     const { container, routerBase } = props
-    const router = new VueRouter({
+    router = new VueRouter({
         base: window.__POWERED_BY_QIANKUN__ ? routerBase : process.env.BASE_URL,
         mode: 'history',
         routes
@@ -30,12 +32,14 @@ if (!window.__POWERED_BY_QIANKUN__) {
 }
 
 // 只会在微应用初始化的时候调用一次
-export async function bootstrap() {
-    console.log('[vue] vue app bootstraped')
-}
+export async function bootstrap() {}
 
 // 子应用每次进入都会调用 mount方法
 export async function mount(props) {
+    // 获取主应用下发的初始数据
+    const globalState = props.getGlobalState()
+    store.commit('setUser', globalState.user)
+
     //  监听全局数据的变化
     props.onGlobalStateChange((state, prevState) => {
         for (const key in state) {
@@ -45,10 +49,6 @@ export async function mount(props) {
         }
     })
 
-    // 获取基座下发的数据
-    const globalState = props.getGlobalState()
-    store.commit('setUser', globalState.user)
-
     // 改变全局的数据
     microAction.setGlobalState = props.setGlobalState
 
@@ -56,13 +56,12 @@ export async function mount(props) {
 }
 
 // 可选生命周期钩子，仅使用 loadMicroApp 方式加载微应用时生效
-export async function update(props) {
-    console.log('update props', props)
-}
+export async function update(props) {}
 
 // 子应用每次 切出/卸载 会调用的方法
 export async function unmount() {
     instance.$destroy()
     instance.$el.innerHTML = ''
     instance = null
+    router = null
 }
