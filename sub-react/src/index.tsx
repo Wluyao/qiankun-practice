@@ -37,12 +37,9 @@ export async function update(props) {}
 // 子应用每次 切出/卸载 会调用的方法
 export async function unmount(props) {
     const { container } = props
-    console.log(111)
-    try {
-        ReactDOM.unmountComponentAtNode(
-            container ? container.querySelector('#root') : document.querySelector('#root')
-        )
-    } catch (e) {}
+    ReactDOM.unmountComponentAtNode(
+        container ? container.querySelector('#root') : document.querySelector('#root')
+    )
 }
 
 // If you want to start measuring performance in your app, pass a function

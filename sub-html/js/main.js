@@ -21,7 +21,6 @@ const render = (options) => {
 (global => {
   global['prehtml'] = {
     bootstrap: () => {
-      console.log('purehtml bootstrap');
       return Promise.resolve();
     },
     mount: (options) => {
@@ -29,7 +28,6 @@ const render = (options) => {
       return render(options);
     },
     unmount: () => {
-      console.log('purehtml unmount');
       return Promise.resolve();
     },
   };

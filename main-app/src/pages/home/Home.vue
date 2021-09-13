@@ -1,7 +1,7 @@
 <template>
     <div class="home">
-        <h1>这是主应用的首页</h1>
-        <div class="btn" @click="handleChangeUser">改变状态user</div>
+        <h1 class="home__header">这是主应用的首页</h1>
+        <div class="home__btn" @click="handleChangeUser">改变状态user</div>
     </div>
 </template>
 
@@ -24,7 +24,10 @@ export default {
 </script>
 
 <style scoped>
-.btn {
+.home__header {
+    text-align: center;
+}
+.home__btn {
     display: inline-block;
     padding: 10px;
     margin: 10px;
