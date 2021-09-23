@@ -8,6 +8,9 @@ module.exports = {
             library: `${name}-[name]`,
             libraryTarget: 'umd',
             jsonpFunction: `webpackJsonp_${name}`
+        },
+        resolve: {
+            extensions: ['.js', '.json', '.vue']
         }
     },
     devServer: {
